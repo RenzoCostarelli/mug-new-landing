@@ -15,13 +15,13 @@ import {
   RigidBody,
 } from "@react-three/rapier";
 import { easing } from "maath";
-import * as THREE from "three";
 
 import { Suspense, useMemo, useReducer, useRef, useState } from "react";
 import Loader from "./Loader";
 import { Canvas, MeshProps, useFrame } from "@react-three/fiber";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
+import * as THREE from "three";
 
 const accents = ["#4060ff", "#20ffa0", "#ff4060", "#ffcc00"];
 const shuffle = (accent = 0) => [
