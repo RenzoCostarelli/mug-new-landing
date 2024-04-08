@@ -1,10 +1,7 @@
 import {
-  Center,
-  Cloud,
   Environment,
   Lightformer,
   MeshTransmissionMaterial,
-  OrbitControls,
   useGLTF,
 } from "@react-three/drei";
 import { Perf } from "r3f-perf";
