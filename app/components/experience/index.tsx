@@ -14,7 +14,6 @@ import {
   Physics,
   RigidBody,
 } from "@react-three/rapier";
-// import { Model } from "./LogoModel";
 import { easing } from "maath";
 import * as THREE from "three";
 
