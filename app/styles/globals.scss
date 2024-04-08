@@ -1,0 +1,84 @@
+@import './_reset.scss';
+@import './_fonts.scss';
+@import './_colors.scss';
+@import './_easings.scss';
+@import './_functions.scss';
+@import './_layout.scss';
+@import './_utils.scss';
+@import './_font-style.scss';
+@import './_themes.scss';
+@import './_scroll.scss';
+
+:root {
+  --header-height: #{mobile-vw(58px)};
+
+  @include desktop {
+    --header-height: #{desktop-vw(98px)};
+  }
+}
+
+html {
+  // font-weight: bolder;
+  font-family: $ff-primary;
+  text-align: center;
+  color: var(--black);
+  scrollbar-width: thin;
+
+  background: rgb(255, 255, 255);
+
+  &.nav {
+    overflow: hidden;
+  }
+}
+
+html,
+body {
+  overscroll-behavior: initial;
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+a,
+button,
+input,
+label,
+textarea,
+select {
+  color: inherit;
+  cursor: pointer;
+}
+
+*::selection {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+svg.icon {
+  path[fill],
+  rect[fill],
+  circle[fill] {
+    fill: currentColor;
+  }
+
+  path[stroke],
+  rect[stroke],
+  circle[stroke] {
+    stroke: currentColor;
+  }
+}
+
+.h100 {
+  height: 100vh;
+}
+
+.vertical-align {
+  align-items: center;
+}
+
+.swiper-slide{
+  // padding: 0.5rem;
+  padding-block: 1rem;
+}

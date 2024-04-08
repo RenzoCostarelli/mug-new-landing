@@ -1,0 +1,38 @@
+// FONTS
+
+$ff-primary: "Inter", sans-serif;
+$ff-nunito: "Nunito", sans-serif;
+
+$ff-body: $ff-primary;
+$ff-heading: $ff-primary;
+
+$fw-thin: 100;
+$fw-regular: 400;
+$fw-bold: 900;
+
+$fs-italic: italic;
+
+// Font sizes
+:root {
+  --fs-s: 1rem;
+  --fs-m: 4.5rem;
+  --fs-l: 6rem;
+  --fs-xl: 8rem;
+  --fs-xxl: 14rem;
+}
+
+.fw-bold {
+  font-weight: $fw-bold;
+}
+
+.fs-italic {
+  font-style: italic;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}

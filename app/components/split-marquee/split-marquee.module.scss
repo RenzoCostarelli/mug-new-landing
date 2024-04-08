@@ -1,0 +1,32 @@
+.marquee_container {
+    width: 100vw;
+    overflow: hidden;
+    padding-block: 2rem;
+    height: calc(14.5vw + 1.25rem);
+    .scroller{
+        position: relative;
+        width: 1200%;
+        will-change: transform;
+        // animation: translateY 2000000ms linear alternate infinite;
+        p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 15vw;
+            color: black;
+            font-weight: bold;
+            text-align: left;
+            &.outline {
+                // transform: translateY(4rem);
+                -webkit-text-stroke: 0.5px white;
+                color: transparent;
+            }
+        }
+    }
+}
+
+@keyframes translateY {
+    100% {
+        transform: translate(-300%)
+    }
+}

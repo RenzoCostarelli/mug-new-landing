@@ -1,0 +1,95 @@
+/* Breakpoints */
+.vertical_scroller {
+  position: relative;
+  display: flex;
+}
+.vertical_scroller .cols_container {
+  display: flex;
+}
+.vertical_scroller .cols_container .column {
+  width: 50%;
+}
+@media (max-width: 800px) {
+  .vertical_scroller .cols_container .column {
+    width: 100%;
+  }
+}
+.vertical_scroller .cols_container .column p {
+  font-size: clamp(1.4em, 1.5vw, 5em);
+  line-height: 1.4;
+  text-align: left;
+}
+.vertical_scroller .cols_container .column h1 {
+  font-size: clamp(2em, 4vw, 6em);
+  text-align: left;
+  font-weight: 900;
+}
+.vertical_scroller .cols_container .desktop_content_section {
+  /* outline:2px solid green; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+@media (max-width: 800px) {
+  .vertical_scroller .cols_container .desktop_content_section {
+    min-height: auto;
+    margin-bottom: 1rem;
+  }
+}
+.vertical_scroller .cols_container .snap_column {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  .vertical_scroller .cols_container .snap_column {
+    display: none;
+  }
+}
+.vertical_scroller .cols_container .desktop_photos {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  margin: auto;
+}
+.vertical_scroller .cols_container .box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.vertical_scroller .cols_container .box .inner_image {
+  position: absolute;
+  width: 90%;
+  inset: 0;
+  margin: auto;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.mobile_image {
+  display: none;
+}
+@media (max-width: 800px) {
+  .mobile_image {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 800px) {
+  .right_coolumn {
+    display: none;
+  }
+}/*# sourceMappingURL=snap-scroller.module.css.map */
