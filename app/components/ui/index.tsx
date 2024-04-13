@@ -49,7 +49,7 @@ export default function UI() {
               </div>
             </div>
           </div>
-          <div className={s.center}>{/* <h1>MUG</h1> */}</div>
+          {/* <div className={s.center}><h1>MUG</h1></div> */}
           <div className={s.bottom}>
             <div className={s.left}>
               <div className={`fw-bold align-left ${s.left_text}`}>
@@ -60,7 +60,7 @@ export default function UI() {
               </div>
             </div>
             <div className={s.right}>
-              <div className={s.circle}>
+              <div className={`relative ${s.circle}`}>
                 <svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"

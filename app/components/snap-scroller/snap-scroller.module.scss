@@ -1,113 +1,112 @@
-@import '../../styles/functions';
+@import "../../styles/functions";
 
 .vertical_scroller {
-    position: relative;
+  position: relative;
+  display: flex;
+  .cols_container {
     display: flex;
-    .cols_container {
-        display: flex;
-        .column {
-            width: 50%;
-            @include mobile {
-                width: 100%;
-            }
-            // padding-bottom: 10rem;
-            p {
-                font-size:clamp(1.4em, 1.5vw, 5em);
-                line-height:1.4;
-                text-align: left;
-                @include mobile {
-                    font-size: 1rem;
-                }
-            }
-            h1 {
-                font-size:clamp(2em, 4vw, 6em);
-                text-align: left;
-                font-weight: 900;
-            }
-        }
-        .desktop_content_section {
-            /* outline:2px solid green; */
-            min-height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            gap: 1rem;
-            @include mobile {
-                min-height: auto;
-                margin-bottom: 1rem;
-            }
-        }
-        
-        .snap_column {
-            // outline:2px solid blue;
-            height:100vh;
-            width:50%;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            @include mobile {
-                display: none;
-            }
-        }
-        .desktop_photos {
-            width:30vw;
-            height:30vw;
-            border-radius:20px;
-            position:relative;
-            overflow:hidden;
-            box-shadow:4px 4px 4px rgba(0, 0, 0, 0.4);
-            margin: auto;
-        }
-        .box {
-            position:absolute;
-            width:100%;
-            height:100%;
-            .background_image {
-                // filter: blur(2px);
-            }
-            .inner_image {
-                position: absolute;
-                width: 90%;
-                inset: 0;
-                margin: auto;
-                aspect-ratio: 16 / 9;
-                border-radius: 1rem;
-                overflow: hidden;
-            }
-            // &.red {
-            //     background: crimson;
-            // }
-            
-            // &.green {
-            //     background:MediumSeaGreen;
-            // }
-            
-            // &.blue {
-            //     background:dodgerblue;
-            // }
-            
-            // &.pink{
-            //     background:deepPink;
-            // }
-        }
-    }
-}
-
-.mobile_image {
-    display: none;
-    @include mobile {
-        display: block;
-        position: relative;
+    .column {
+      width: 50%;
+      @include mobile {
         width: 100%;
+      }
+      // padding-bottom: 10rem;
+      p {
+        font-size: clamp(1.4em, 1.5vw, 5em);
+        line-height: 1.4;
+        text-align: left;
+        @include mobile {
+          font-size: 1rem;
+        }
+      }
+      h1 {
+        font-size: clamp(2em, 4vw, 6em);
+        text-align: left;
+        font-weight: 900;
+      }
+    }
+    .desktop_content_section {
+      /* outline:2px solid green; */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      @include mobile {
+        min-height: auto;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .snap_column {
+      // outline:2px solid blue;
+      height: 100vh;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include mobile {
+        display: none;
+      }
+    }
+    .desktop_photos {
+      width: 30vw;
+      height: 30vw;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+      margin: auto;
+    }
+    .box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      .background_image {
+        // filter: blur(2px);
+      }
+      .inner_image {
+        position: absolute;
+        width: 90%;
+        inset: 0;
+        margin: auto;
         aspect-ratio: 16 / 9;
         border-radius: 1rem;
         overflow: hidden;
+      }
+      // &.red {
+      //     background: crimson;
+      // }
+
+      // &.green {
+      //     background:MediumSeaGreen;
+      // }
+
+      // &.blue {
+      //     background:dodgerblue;
+      // }
+
+      // &.pink{
+      //     background:deepPink;
+      // }
     }
+  }
+}
+
+.mobile_image {
+  display: none;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  overflow: hidden;
+  @include mobile {
+    display: block;
+  }
 }
 
 .right_coolumn {
-    @include mobile {
-        display: none;
-    }
+  @include mobile {
+    display: none;
+  }
 }
-

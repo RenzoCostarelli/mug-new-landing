@@ -18,8 +18,7 @@ import {
 import { easing } from "maath";
 import * as THREE from "three";
 
-import { Suspense, useMemo, useReducer, useRef, useState } from "react";
-import Loader from "./Loader";
+import { Suspense, useMemo, useReducer, useRef } from "react";
 import { Canvas, MeshProps, useFrame } from "@react-three/fiber";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
