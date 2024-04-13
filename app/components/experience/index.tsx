@@ -1,7 +1,10 @@
 import {
+  Center,
+  Cloud,
   Environment,
   Lightformer,
   MeshTransmissionMaterial,
+  OrbitControls,
   useGLTF,
 } from "@react-three/drei";
 import { Perf } from "r3f-perf";
@@ -11,24 +14,25 @@ import {
   Physics,
   RigidBody,
 } from "@react-three/rapier";
+// import { Model } from "./LogoModel";
 import { easing } from "maath";
+import * as THREE from "three";
 
 import { Suspense, useMemo, useReducer, useRef, useState } from "react";
 import Loader from "./Loader";
 import { Canvas, MeshProps, useFrame } from "@react-three/fiber";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
-import * as THREE from "three";
 
 const accents = ["#4060ff", "#20ffa0", "#ff4060", "#ffcc00"];
 const shuffle = (accent = 0) => [
-  { color: "#444", roughness: 0.1 },
+  // { color: "#444", roughness: 0.1 },
+  // { color: "#444", roughness: 0.75 },
   { color: "#444", roughness: 0.75 },
-  { color: "#444", roughness: 0.75 },
+  // { color: "white", roughness: 0.1 },
+  // { color: "white", roughness: 0.75 },
   { color: "white", roughness: 0.1 },
-  { color: "white", roughness: 0.75 },
-  { color: "white", roughness: 0.1 },
-  { color: accents[accent], roughness: 0.1, accent: true },
+  // { color: accents[accent], roughness: 0.1, accent: true },
   { color: accents[accent], roughness: 0.75, accent: true },
   { color: accents[accent], roughness: 0.1, accent: true },
 ];
@@ -185,7 +189,7 @@ function Connector({
       <CuboidCollider args={[0.38, 1.27, 0.38]} />
       <CuboidCollider args={[1.27, 0.38, 0.38]} />
       <CuboidCollider args={[0.38, 0.38, 1.27]} />
-      {children ? children : <Model {...props} />}
+      {children ? children : <Model {...props} color={color} />}
       {accent && <pointLight intensity={4} distance={2.5} color={color} />}
     </RigidBody>
   );

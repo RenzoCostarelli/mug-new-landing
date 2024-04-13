@@ -1,13 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import s from "./ui.module.scss";
-import useStore from "../../lib/store";
-
-interface TitleProps {
-  text1: string;
-  text2: string;
-  text3: string;
-}
 
 export default function UI() {
   const [text1, setTitle1] = useState<string>("La web del Mug");

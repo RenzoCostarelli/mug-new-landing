@@ -4,7 +4,6 @@ import SnapScroller from "./components/snap-scroller";
 import VideoSection from "./components/video";
 import Bands from "./components/bands-cards";
 import UI from "./components/ui";
-import { useEffect, useState } from "react";
 import FooterSection from "./components/footer-section";
 export default function Home() {
   return (
