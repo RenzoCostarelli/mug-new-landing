@@ -22,6 +22,7 @@ import { Suspense, useMemo, useReducer, useRef } from "react";
 import { Canvas, MeshProps, useFrame } from "@react-three/fiber";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
+import { useMediaQuery } from "@mantine/hooks";
 
 const accents = ["#4060ff", "#20ffa0", "#ff4060", "#ffcc00"];
 const shuffle = (accent = 0) => [
@@ -39,6 +40,7 @@ const shuffle = (accent = 0) => [
 export default function Experience(props: any) {
   const [accent, click] = useReducer((state) => ++state % accents.length, 0);
   const connectors = useMemo(() => shuffle(accent), [accent]);
+
   return (
     <>
       <Canvas
@@ -216,7 +218,7 @@ function Model({
   const ref = useRef<any>(null);
   const { nodes, materials } = useGLTF("/model/mug.glb") as ModelGLTF;
   // console.log(nodes.Scene.children[0]);
-
+  const matches = useMediaQuery("(min-width: 800px)");
   useFrame((state, delta) => {
     if (ref.current) {
       easing.dampC(ref.current.material.color, color, 0.2, delta);
@@ -228,7 +230,7 @@ function Model({
       ref={ref}
       castShadow
       receiveShadow
-      scale={1}
+      scale={matches ? 1 : 0.7}
       geometry={nodes.Scene.children[0].geometry}
     >
       <meshStandardMaterial metalness={0.2} roughness={roughness} />

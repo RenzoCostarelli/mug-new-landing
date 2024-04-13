@@ -1,3 +1,5 @@
+@import "../../styles/functions";
+
 .hero {
   height: 100vh;
   width: 100%;
@@ -5,12 +7,16 @@
   position: relative;
   overflow: hidden;
   z-index: 0;
+  margin-bottom: 3rem;
   .canvas_container {
     position: absolute;
     inset: 0;
     height: 100%;
     width: 100%;
     padding: 3rem;
+    @include mobile {
+      padding: 0;
+    }
   }
 }
 
