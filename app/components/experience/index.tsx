@@ -1,3 +1,4 @@
+"use client";
 import {
   Center,
   Cloud,
@@ -14,17 +15,20 @@ import {
   Physics,
   RigidBody,
 } from "@react-three/rapier";
+import useStore from "@/app/lib/store";
 // import { Model } from "./LogoModel";
 import { easing } from "maath";
 import * as THREE from "three";
 
-import { Suspense, useMemo, useReducer, useRef } from "react";
+import { Suspense, useEffect, useMemo, useReducer, useRef } from "react";
 import { Canvas, MeshProps, useFrame } from "@react-three/fiber";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
 import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 import { useMediaQuery } from "@mantine/hooks";
+import Loader from "../loader/loader";
+import React from "react";
 
-const accents = ["#4060ff", "#20ffa0", "#ff4060", "#ffcc00"];
+const accents = ["#C800FF", "#FFC800", "#00FFC8", "#ffcc00"];
 const shuffle = (accent = 0) => [
   // { color: "#444", roughness: 0.1 },
   // { color: "#444", roughness: 0.75 },
@@ -32,7 +36,7 @@ const shuffle = (accent = 0) => [
   // { color: "white", roughness: 0.1 },
   // { color: "white", roughness: 0.75 },
   { color: "white", roughness: 0.1 },
-  // { color: accents[accent], roughness: 0.1, accent: true },
+  { color: accents[accent], roughness: 0.1, accent: true },
   { color: accents[accent], roughness: 0.75, accent: true },
   { color: accents[accent], roughness: 0.1, accent: true },
 ];
@@ -40,12 +44,13 @@ const shuffle = (accent = 0) => [
 export default function Experience(props: any) {
   const [accent, click] = useReducer((state) => ++state % accents.length, 0);
   const connectors = useMemo(() => shuffle(accent), [accent]);
-
+  const matches = useMediaQuery("(min-width: 800px)");
   return (
     <>
       <Canvas
         shadows
         onClick={click}
+        onLoad={() => console.log("h")}
         dpr={[1, 1.5]}
         gl={{ antialias: false }}
         camera={{ position: [0, 0, 15], fov: 17.5, near: 1, far: 20 }}
@@ -60,26 +65,30 @@ export default function Experience(props: any) {
           intensity={1}
           castShadow
         />
+
         <Physics /*debug*/ gravity={[0, 0, 0]}>
           <Pointer />
           {
             connectors.map((props, i) => <Connector key={i} {...props} />) /* prettier-ignore */
           }
-          <Connector position={[10, 10, 5]}>
-            <Model>
-              <MeshTransmissionMaterial
-                clearcoat={1}
-                thickness={0.1}
-                anisotropicBlur={0.1}
-                chromaticAberration={0.1}
-                samples={8}
-                resolution={512}
-                distortionScale={0}
-                temporalDistortion={0}
-              />
-            </Model>
-          </Connector>
+          {matches && (
+            <Connector position={[10, 10, 5]}>
+              <Model>
+                <MeshTransmissionMaterial
+                  clearcoat={1}
+                  thickness={0.1}
+                  anisotropicBlur={0.1}
+                  chromaticAberration={0.1}
+                  samples={8}
+                  resolution={512}
+                  distortionScale={0}
+                  temporalDistortion={0}
+                />
+              </Model>
+            </Connector>
+          )}
         </Physics>
+
         <EffectComposer disableNormalPass multisampling={8}>
           <N8AO distanceFalloff={1} aoRadius={1} intensity={4} />
         </EffectComposer>
@@ -209,15 +218,22 @@ interface ModelGLTF extends GLTF {
   };
 }
 
-function Model({
+function ModelComponent({
   children,
   color = "white",
   roughness = 0,
   ...props
 }: ModelProps) {
   const ref = useRef<any>(null);
+  const { isLoaded, setLoaded } = useStore();
   const { nodes, materials } = useGLTF("/model/mug.glb") as ModelGLTF;
-  // console.log(nodes.Scene.children[0]);
+
+  useEffect(() => {
+    if (nodes) {
+      setLoaded(true);
+    }
+  }, [nodes, isLoaded, setLoaded]);
+
   const matches = useMediaQuery("(min-width: 800px)");
   useFrame((state, delta) => {
     if (ref.current) {
@@ -238,3 +254,10 @@ function Model({
     </mesh>
   );
 }
+
+const Model = React.memo(ModelComponent, (prevProps, nextProps) => {
+  return (
+    prevProps.color === nextProps.color &&
+    prevProps.roughness === nextProps.roughness
+  );
+});

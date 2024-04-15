@@ -5,9 +5,12 @@ import VideoSection from "./components/video";
 import Bands from "./components/bands-cards";
 import UI from "./components/ui";
 import FooterSection from "./components/footer-section";
+import { Suspense } from "react";
+import Loader from "./components/loader/loader";
 export default function Home() {
   return (
     <>
+      <Loader />
       <UI />
       <header
         className={s.header_container}

@@ -2,6 +2,8 @@
 import { useMediaQuery } from "@mantine/hooks";
 import Experience from "../experience";
 import s from "./hero.module.scss";
+import { Suspense } from "react";
+import Loader from "../loader/loader";
 
 export default function Hero() {
   const matches = useMediaQuery("(min-width: 800px)");

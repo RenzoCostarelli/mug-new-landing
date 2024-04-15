@@ -89,6 +89,7 @@ function BandsCards({ bandData }: { bandData: Band }) {
                 src={img_url}
                 alt={title}
                 fill
+                sizes="1000px"
                 style={{
                   objectFit: "cover",
                 }}
