@@ -8,8 +8,12 @@
   overflow: hidden;
   z-index: 0;
   margin-bottom: 3rem;
+  @include mobile {
+    height: 60vh;
+  }
   .canvas_container {
     position: absolute;
+    opacity: 0;
     inset: 0;
     height: 100%;
     width: 100%;

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import s from "./footer-section.module.scss";
 import Image from "next/image";
 
@@ -33,8 +34,10 @@ export default function FooterSection() {
           <h1>Nos encontras en</h1>
           <div className={s.social_network_logos}>
             {redes.map((red) => (
-              <div className={s.logo_container} key={red.alt}>
-                <Image src={red.src} alt={red.alt} fill />
+              <div key={red.alt}>
+                <Link href={red.href} className={`${s.logo_container}`}>
+                  <Image src={red.src} alt={red.alt} fill sizes="300px" />
+                </Link>
               </div>
             ))}
           </div>

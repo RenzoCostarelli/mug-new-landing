@@ -56,6 +56,7 @@ export default function Experience(props: any) {
         camera={{ position: [0, 0, 15], fov: 17.5, near: 1, far: 20 }}
         {...props}
       >
+        {/* <Perf /> */}
         <color attach="background" args={["#141622"]} />
         <ambientLight intensity={0.4} />
         <spotLight

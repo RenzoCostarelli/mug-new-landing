@@ -1,9 +1,32 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 import s from "./ui.module.scss";
+import useStore from "@/app/lib/store";
 
 export default function UI() {
   const [text1, setTitle1] = useState<string>("La web del Mug");
+  const { isLoaded } = useStore();
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      if (isLoaded) {
+        gsap.set(".first", {
+          opacity: 0,
+          scale: 0.5,
+        });
+        gsap.to(".first", {
+          opacity: 1,
+          scale: 1,
+          stagger: 0.1,
+          duration: 0.5,
+          delay: 2,
+        });
+      }
+    });
+
+    return () => ctx.revert();
+  }, [isLoaded]);
+
   useEffect(() => {
     let observers: IntersectionObserver[] = [];
 
@@ -32,7 +55,7 @@ export default function UI() {
       <div className={s.ui_container}>
         <div className={s.grid}>
           <div className={s.top}>
-            <div className={`${s.left} ${s.rotate90}`}>
+            <div className={`${s.left} ${s.rotate90} first`}>
               <div className={`fw-bold align-left ${s.left_text}`}>
                 <div className={s.variable_width}>
                   <div className={s.text}>{text1}</div>
@@ -40,7 +63,7 @@ export default function UI() {
                 </div>
               </div>
             </div>
-            <div className={s.right}>
+            <div className={`${s.right} first`}>
               <div className={`fw-bold align-right ${s.right_text}`}>
                 <div className={`${s.variable_width} ${s.right}`}>
                   <div className={s.text}>{text1}</div>
@@ -51,7 +74,7 @@ export default function UI() {
           </div>
           {/* <div className={s.center}><h1>MUG</h1></div> */}
           <div className={s.bottom}>
-            <div className={s.left}>
+            <div className={`first ${s.left}`}>
               <div className={`fw-bold align-left ${s.left_text}`}>
                 <div className={s.variable_width}>
                   <div className={s.text}>{text1}</div>
@@ -59,7 +82,7 @@ export default function UI() {
                 </div>
               </div>
             </div>
-            <div className={s.right}>
+            <div className={`${s.right} first`}>
               <div className={`relative ${s.circle}`}>
                 <svg
                   version="1.1"
