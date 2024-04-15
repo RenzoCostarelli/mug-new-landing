@@ -28,14 +28,14 @@ import { useMediaQuery } from "@mantine/hooks";
 import Loader from "../loader/loader";
 import React from "react";
 
-const accents = ["#C800FF", "#FFC800", "#00FFC8", "#ffcc00"];
+const accents = ["#fc5e9b", "#ad79f5", "#ffdcb5"];
 const shuffle = (accent = 0) => [
   // { color: "#444", roughness: 0.1 },
   // { color: "#444", roughness: 0.75 },
   { color: "#444", roughness: 0.75 },
   // { color: "white", roughness: 0.1 },
   // { color: "white", roughness: 0.75 },
-  { color: "white", roughness: 0.1 },
+  { color: "#ad79f5", roughness: 0.1 },
   { color: accents[accent], roughness: 0.1, accent: true },
   { color: accents[accent], roughness: 0.75, accent: true },
   { color: accents[accent], roughness: 0.1, accent: true },
@@ -50,7 +50,6 @@ export default function Experience(props: any) {
       <Canvas
         shadows
         onClick={click}
-        onLoad={() => console.log("h")}
         dpr={[1, 1.5]}
         gl={{ antialias: false }}
         camera={{ position: [0, 0, 15], fov: 17.5, near: 1, far: 20 }}
