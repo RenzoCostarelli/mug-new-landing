@@ -17,9 +17,9 @@ export default function UI() {
         gsap.to(".first", {
           opacity: 1,
           scale: 1,
-          stagger: 0.1,
+          stagger: 0.2,
           duration: 0.5,
-          delay: 2,
+          delay: 3,
         });
       }
     });
