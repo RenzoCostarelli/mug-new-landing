@@ -1,11 +1,15 @@
 "use client";
 import {
+  Box,
   Center,
   Cloud,
   Environment,
+  Instance,
+  Instances,
   Lightformer,
   MeshTransmissionMaterial,
   OrbitControls,
+  Sphere,
   useGLTF,
 } from "@react-three/drei";
 import { Perf } from "r3f-perf";
@@ -52,10 +56,11 @@ export default function Experience(props: any) {
         onClick={click}
         dpr={[1, 1.5]}
         gl={{ antialias: false }}
-        camera={{ position: [0, 0, 15], fov: 17.5, near: 1, far: 20 }}
+        camera={{ position: [0, 0, 15], fov: 17.5 }}
         {...props}
       >
         {/* <Perf /> */}
+        {/* <OrbitControls /> */}
         <color attach="background" args={["#141622"]} />
         <ambientLight intensity={0.4} />
         <spotLight
@@ -68,30 +73,18 @@ export default function Experience(props: any) {
 
         <Physics /*debug*/ gravity={[0, 0, 0]}>
           <Pointer />
+
           {
             connectors.map((props, i) => <Connector key={i} {...props} />) /* prettier-ignore */
           }
           {matches && (
-            <Connector position={[10, 10, 5]}>
+            <Connector position={[0, 0, 0]}>
               <Model>
-                <MeshTransmissionMaterial
-                  clearcoat={1}
-                  thickness={0.1}
-                  anisotropicBlur={0.1}
-                  chromaticAberration={0.1}
-                  samples={8}
-                  resolution={512}
-                  distortionScale={0}
-                  temporalDistortion={0}
-                />
+                <meshStandardMaterial metalness={0.2} roughness={0} />
               </Model>
             </Connector>
           )}
         </Physics>
-
-        <EffectComposer disableNormalPass multisampling={8}>
-          <N8AO distanceFalloff={1} aoRadius={1} intensity={4} />
-        </EffectComposer>
 
         <Environment resolution={256}>
           <group rotation={[-Math.PI / 3, 0, 1]}>
@@ -148,7 +141,10 @@ function Pointer({ vec = new THREE.Vector3() }) {
       colliders={false}
       ref={ref}
     >
-      <BallCollider args={[1]} />
+      <BallCollider args={[0.75]} />
+      {/* <Sphere args={[0.75]}>
+        <meshStandardMaterial color="red" wireframe />
+      </Sphere> */}
     </RigidBody>
   );
 }
@@ -188,20 +184,29 @@ function Connector({
   });
 
   return (
+    // <Instance >
     <RigidBody
-      linearDamping={4}
-      angularDamping={1}
-      friction={0.1}
-      position={pos}
+      linearDamping={2}
+      angularDamping={2}
+      friction={2}
       ref={api}
       colliders={false}
+      position={pos}
     >
-      <CuboidCollider args={[0.38, 1.27, 0.38]} />
-      <CuboidCollider args={[1.27, 0.38, 0.38]} />
-      <CuboidCollider args={[0.38, 0.38, 1.27]} />
+      <CuboidCollider args={[1, 1, 0.38]} />
+      {/* <mesh>
+        <boxBufferGeometry args={[1, 1, 0.38]} />
+        <meshStandardMaterial color="red" wireframe />
+      </mesh> */}
+      <CuboidCollider args={[0.38, 0.38, 1.17]} />
+      {/* <mesh>
+        <boxBufferGeometry args={[0.38, 0.38, 1.17]} />
+        <meshStandardMaterial color="red" wireframe />
+      </mesh> */}
       {children ? children : <Model {...props} color={color} />}
       {accent && <pointLight intensity={4} distance={2.5} color={color} />}
     </RigidBody>
+    // </Instance>
   );
 }
 
@@ -246,7 +251,7 @@ function ModelComponent({
       ref={ref}
       castShadow
       receiveShadow
-      scale={matches ? 1 : 0.7}
+      scale={matches ? 0.8 : 0.5}
       geometry={nodes.Scene.children[0].geometry}
     >
       <meshStandardMaterial metalness={0.2} roughness={roughness} />

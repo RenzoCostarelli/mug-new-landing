@@ -73,16 +73,13 @@ export default function SnapScroller() {
                 <h1>La Unión</h1>
                 <p>
                   Al ritmo de la gestión colaborativa, el MUG nace en 2017 como
-                  vehículo para expandir y afianzar las fronteras artísticas y
-                  profesionales de quienes lo componen. Desde entonces sus más
-                  de 40 integrantes se dan un espacio de encuentro constante
-                  para compartir diagnósticos y entablar estrategias en conjunto
-                  hacia el desarrollo cultural y profesional de la escena local,
-                  fomentando el crecimiento para los trabajadores de la cultura,
-                  con hincapié en la industria musical. Lejos de la competencia,
-                  la unión del colectivo se formaliza en 2021 como Asociación
-                  Civil, logrando consolidarse como un agente de cambio en el
-                  ecosistema cultural local.
+                  vehículo para expandir fronteras artísticas y profesionales,
+                  creando espacios de encuentro constante para trabajadores y
+                  trabajadoras de la cultura rosarina. Desde la música, la
+                  técnica escénica, la producción, la gastronomía y la
+                  comunicación, por fuera de la competencia, sus partes se
+                  entienden agentes de la misma trama. Asociación Civil desde
+                  2021, la unión del colectivo construye su norte de acción.
                 </p>
               </div>
               <div className={`${s.desktop_content_section} text_area`}>
@@ -101,10 +98,10 @@ export default function SnapScroller() {
                 <p>
                   Una organización creativa y colaborativa pone al colectivo en
                   movimiento para generar acuerdos y transformarlos en acción.
-                  De funcionamiento asambleario, el MUG abre sus espacios de
-                  decisión para que sean representativos, asegurando un diálogo
-                  horizontal donde todas las ideas son puestas en valor y logra
-                  coordinar espacios de balance para avanzar siempre hacia la
+                  De funcionamiento asambleario, el MUG abre espacios de
+                  decisión para construir su realidad, asegurando un diálogo
+                  horizontal donde todas las ideas son puestas en valor,
+                  coordinando espacios de balance para avanzar siempre hacia la
                   acción transformadora.
                 </p>
               </div>
@@ -123,16 +120,15 @@ export default function SnapScroller() {
                 <h1>El Groove</h1>
                 <p>
                   Más allá de una estética, el groove como política del cuerpo
-                  en movimiento define al colectivo en diversos niveles.
-                  Asimismo, lo mantiene en contacto y colaboración con una
-                  amplia red de agentes y agitadores culturales que trabajan de
-                  manera cercana y comparten las recompensas por los objetivos
-                  alcanzados, generando también el marco de interés de una
-                  comunidad en constante crecimiento. El MUG es respaldado por
-                  un público joven, activo y danzante que deviene en un actor
-                  social clave de esta experiencia colaborativa, compartiendo no
-                  sólo la dimensión estética del hacer artístico, sino también
-                  las formas éticas de desarrollo del colectivo.
+                  en movimiento define al colectivo. En contacto y colaboración
+                  con una amplia red de agentes y agitadores culturales que
+                  trabajan de manera cercana y comparten las recompensas por los
+                  objetivos alcanzados, generando también el marco de interés de
+                  una comunidad en constante crecimiento. El MUG es respaldado
+                  por un público joven, activo y danzante que deviene en un
+                  actor social clave de esta experiencia colaborativa,
+                  compartiendo no sólo la dimensión estética del hacer
+                  artístico, sino también las formas éticas del colectivo.
                 </p>
               </div>
             </div>
