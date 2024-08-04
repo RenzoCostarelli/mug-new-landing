@@ -1,0 +1,20 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 5rem;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 50rem;
+  pointer-events: none;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem;
+  white-space: nowrap;
+  transform: scale(0);
+}

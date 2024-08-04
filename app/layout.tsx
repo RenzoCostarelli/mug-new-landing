@@ -2,6 +2,7 @@ import "./styles/globals.scss";
 import { Inter } from "next/font/google";
 import Lenis from "@studio-freight/lenis";
 import { LenisScroller } from "./lenis-scroller";
+import MouseFollowerr from "./components/mouse-follower/mouse-follower";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <MouseFollowerr />
+      </body>
       <LenisScroller />
     </html>
   );

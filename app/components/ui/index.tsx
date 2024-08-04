@@ -53,7 +53,7 @@ export default function UI() {
   return (
     <>
       <div className={s.ui_container}>
-        <div className={s.grid}>
+        <div className={`${s.grid} ${text1 === "" ? s.hide : ""}`}>
           <div className={s.top}>
             <div className={`${s.left} ${s.rotate90} first`}>
               <div className={`fw-bold align-left ${s.left_text}`}>

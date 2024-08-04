@@ -18,6 +18,10 @@
   position: fixed;
   z-index: 9;
   mix-blend-mode: difference;
+  transition: opacity 150ms linear;
+  &.hide {
+    opacity: 0;
+  }
 }
 .top {
   display: grid;

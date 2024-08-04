@@ -22,7 +22,7 @@ export default function Home() {
         <section id="about" data-title="Sobre el mug">
           <SnapScroller />
         </section>
-        <section id="video" data-title="Ver Reel">
+        <section id="video" data-title="">
           <VideoSection />
         </section>
         <section

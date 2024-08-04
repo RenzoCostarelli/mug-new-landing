@@ -61,7 +61,36 @@ export default function SnapScroller() {
               <div className={`${s.desktop_content_section} text_area`}>
                 <div className={`${s.mobile_image}`}>
                   <Image
-                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715759/mug1_f3wawg.jpg"
+                    src="/images/1.jpg"
+                    alt="Mug team"
+                    fill
+                    sizes="1200px"
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <h1>Somos</h1>
+                <p>
+                  Somos una Asociación Civil que reúne a trabajadores de la
+                  cultura para fomentar su actividad y contribuir de forma
+                  activa en la profesionalización de sus proyectos.Con
+                  organización creativa y una motivación comunitaria logramos
+                  realizar 3 ediciónes del emblemático Festimug, nuestra nave
+                  insignia, fortalecido año tras año con nuestro crecimiento
+                  conjunto y sostenido, albergando el trabajo mancomunado de más
+                  de 100 personas relacionadas con la industria cultural y
+                  gastronómica de la ciudad. Sostenemos una sala de ensayo y
+                  recientemente incorporamos nuestra propia plataforma web y una
+                  ticketera online. De dinámica asamblearia, el colectivo defina
+                  su rumbo de manera horizontal y busca siempre estar en
+                  contacto con el ecositema que la rodea.
+                </p>
+              </div>
+              <div className={`${s.desktop_content_section} text_area`}>
+                <div className={`${s.mobile_image}`}>
+                  <Image
+                    src="/images/2.jpg"
                     alt="Mug team"
                     fill
                     sizes="1200px"
@@ -74,18 +103,18 @@ export default function SnapScroller() {
                 <p>
                   Al ritmo de la gestión colaborativa, el MUG nace en 2017 como
                   vehículo para expandir fronteras artísticas y profesionales,
-                  creando espacios de encuentro constante para trabajadores y
-                  trabajadoras de la cultura rosarina. Desde la música, la
-                  técnica escénica, la producción, la gastronomía y la
-                  comunicación, por fuera de la competencia, sus partes se
-                  entienden agentes de la misma trama. Asociación Civil desde
-                  2021, la unión del colectivo construye su norte de acción.
+                  creando espacios de encuentro para la cultura rosarina. Desde
+                  la música, la técnica escénica, la producción, la gastronomía
+                  y la comunicación, sus partes se entienden agentes de la misma
+                  trama. Asociación Civil desde 2021, el Movimiento Unión Groove
+                  reúne a trabajadores y trabajadoras de la cultura para
+                  fomentar su actividad y mejorar sus condiciones laborales.
                 </p>
               </div>
               <div className={`${s.desktop_content_section} text_area`}>
                 <div className={`${s.mobile_image}`}>
                   <Image
-                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug2_p472wp.jpg"
+                    src="/images/3.jpg"
                     alt="Mug team"
                     fill
                     sizes="1200px"
@@ -96,19 +125,19 @@ export default function SnapScroller() {
                 </div>
                 <h1>El Movimiento</h1>
                 <p>
-                  Una organización creativa y colaborativa pone al colectivo en
-                  movimiento para generar acuerdos y transformarlos en acción.
-                  De funcionamiento asambleario, el MUG abre espacios de
-                  decisión para construir su realidad, asegurando un diálogo
-                  horizontal donde todas las ideas son puestas en valor,
-                  coordinando espacios de balance para avanzar siempre hacia la
-                  acción transformadora.
+                  Una <span className="fw-bold">organización creativa</span>,
+                  horizontal y colaborativa construye el valor de nuestro
+                  colectivo, lo pone en movimiento para generar acuerdos y logra
+                  transformarlos en acción. De funcionamiento asambleario, el
+                  MUG abre espacios de decisión para construir su realidad,
+                  coordinando espacios de balance para capitalizar sus diversas
+                  experiencias.
                 </p>
               </div>
               <div className={`${s.desktop_content_section} text_area`}>
                 <div className={`${s.mobile_image}`}>
                   <Image
-                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug3_b4j3sa.jpg"
+                    src="/images/4.jpg"
                     alt="Mug team"
                     fill
                     sizes="1200px"
@@ -121,14 +150,14 @@ export default function SnapScroller() {
                 <p>
                   Más allá de una estética, el groove como política del cuerpo
                   en movimiento define al colectivo. En contacto y colaboración
-                  con una amplia red de agentes y agitadores culturales que
-                  trabajan de manera cercana y comparten las recompensas por los
-                  objetivos alcanzados, generando también el marco de interés de
-                  una comunidad en constante crecimiento. El MUG es respaldado
-                  por un público joven, activo y danzante que deviene en un
-                  actor social clave de esta experiencia colaborativa,
-                  compartiendo no sólo la dimensión estética del hacer
-                  artístico, sino también las formas éticas del colectivo.
+                  con una amplia red de agentes que trabajan de manera cercana y
+                  comparten las recompensas por los objetivos alcanzados,
+                  generando también el marco de interés de una comunidad en
+                  constante crecimiento. El MUG es respaldado por un público
+                  joven, activo y danzante que deviene en un actor social clave
+                  de esta experiencia colaborativa, compartiendo no sólo la
+                  dimensión estética del hacer artístico, sino también las
+                  formas éticas del colectivo.
                 </p>
               </div>
             </div>
@@ -140,7 +169,7 @@ export default function SnapScroller() {
             <div className={`${s.desktop_photos}`}>
               <div className={`${s.box} ${s.red} desktop_photo`} ref={boxRef}>
                 <Image
-                  src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug1blur_iaxune.jpg"
+                  src="/images/1.jpg"
                   alt="Mug team"
                   fill
                   sizes="1200px"
@@ -151,7 +180,30 @@ export default function SnapScroller() {
                 />
                 <div className={`${s.inner_image} inner_img`}>
                   <Image
-                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715759/mug1_f3wawg.jpg"
+                    src="/images/1.jpg"
+                    alt="Mug team"
+                    fill
+                    sizes="1200px"
+                    style={{
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </div>
+              <div className={`${s.box} ${s.red} desktop_photo`} ref={boxRef}>
+                <Image
+                  src="/images/2.jpg"
+                  alt="Mug team"
+                  fill
+                  sizes="1200px"
+                  className={`${s.background_image}`}
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+                <div className={`${s.inner_image} inner_img`}>
+                  <Image
+                    src="/images/2.jpg"
                     alt="Mug team"
                     fill
                     sizes="1200px"
@@ -163,7 +215,7 @@ export default function SnapScroller() {
               </div>
               <div className={`${s.box} ${s.green} desktop_photo`} ref={boxRef}>
                 <Image
-                  src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715759/mug2blur_ggky4p.jpg"
+                  src="/images/3.jpg"
                   alt="Mug team"
                   fill
                   sizes="1200px"
@@ -174,7 +226,7 @@ export default function SnapScroller() {
                 />
                 <div className={`${s.inner_image} inner_img`}>
                   <Image
-                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug2_p472wp.jpg"
+                    src="/images/3.jpg"
                     alt="Mug team"
                     fill
                     sizes="1200px"
@@ -186,7 +238,7 @@ export default function SnapScroller() {
               </div>
               <div className={`${s.box} ${s.pink} desktop_photo`} ref={boxRef}>
                 <Image
-                  src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug3blur_n2xiqf.jpg"
+                  src="/images/4.jpg"
                   alt="Mug team"
                   fill
                   sizes="1200px"
@@ -197,30 +249,7 @@ export default function SnapScroller() {
                 />
                 <div className={`${s.inner_image} inner_img`}>
                   <Image
-                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug3_b4j3sa.jpg"
-                    alt="Mug team"
-                    fill
-                    sizes="1200px"
-                    style={{
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-              </div>
-              <div className={`${s.box} ${s.blue} desktop_photo`} ref={boxRef}>
-                <Image
-                  src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug4blur_nuuzzo.jpg"
-                  alt="Mug team"
-                  fill
-                  sizes="1200px"
-                  className={`${s.background_image}`}
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-                <div className={`${s.inner_image} inner_img`}>
-                  <Image
-                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715761/mug4_ex8yjc.jpg"
+                    src="/images/4.jpg"
                     alt="Mug team"
                     fill
                     sizes="1200px"
