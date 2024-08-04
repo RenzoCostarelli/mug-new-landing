@@ -14,8 +14,8 @@ export default function MouseFollower() {
         gsap.to(cursorRef.current, {
           x: event.clientX - cursorRef.current.offsetWidth / 2,
           y: event.clientY - cursorRef.current.offsetHeight / 2,
-          duration: 0.1,
-          ease: "power2.out",
+          duration: 1,
+          ease: "elastic.out",
         });
       }
     };
@@ -27,7 +27,7 @@ export default function MouseFollower() {
         setCursorClass("s.video");
         setLabel("Ver Reel");
         gsap.to(cursorRef.current, {
-          scale: 1.5,
+          scale: 2,
         });
       }
     };
@@ -54,7 +54,7 @@ export default function MouseFollower() {
 
   return (
     <div className={`${s.cursor} ${s.cursorClass}`} ref={cursorRef}>
-      {label}
+      <span>{label}</span>
     </div>
   );
 }
