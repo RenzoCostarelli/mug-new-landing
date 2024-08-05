@@ -7,6 +7,9 @@ export default function VideoSection() {
       <Link href="https://www.youtube.com/watch?v=jXrhxwyYw2I" target="blank">
         <div className={s.video_area}>
           <div className={s.overlay} data-cursor-video></div>
+          <div className={s.mobile_play}>
+            <div className={s.button}>Ver Reel</div>
+          </div>
           <video
             className={s.video}
             src="https://res.cloudinary.com/dkgnaegp9/video/upload/v1722811184/output2_svh41r.webm"

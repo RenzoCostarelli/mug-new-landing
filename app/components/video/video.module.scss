@@ -1,26 +1,55 @@
-@import '../../styles/functions';
+@import "../../styles/functions";
 
 .video_area {
-    height: 130vh;
-    width: 100vw;
-    background-color: cadetblue;
-    position: relative;
-    z-index: 0;
+  height: 130vh;
+  width: 100vw;
+  background-color: cadetblue;
+  position: relative;
+  z-index: 0;
+  @include mobile {
+    height: auto;
+  }
+  .video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
     @include mobile {
-        height: 40vh;
+      height: auto;
+      margin-bottom: -0.3rem;
     }
-    .video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+  }
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: black;
+    opacity: 0.3;
+  }
+}
+
+.mobile_play {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  @include mobile {
+    display: flex;
+    .button {
+      backdrop-filter: blur(5px);
+      background-color: rgba(255, 255, 255, 0.203);
+      color: black;
+      padding: 1rem;
+      aspect-ratio: 1 / 1;
+      border-radius: 50rem;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      font-weight: bold;
     }
-    .overlay {
-        position: absolute;
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        inset: 0;
-        background-color: black;
-        opacity: 0.3;
-    }
+  }
 }
