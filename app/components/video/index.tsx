@@ -9,10 +9,11 @@ export default function VideoSection() {
           <div className={s.overlay} data-cursor-video></div>
           <video
             className={s.video}
-            src="/video/output2.webm"
+            src="https://res.cloudinary.com/dkgnaegp9/video/upload/v1722811184/output2_svh41r.webm"
             autoPlay
             loop
             muted
+            playsInline
           >
             Tu navegador no admite el elemento <code>video</code>.
           </video>
