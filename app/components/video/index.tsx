@@ -9,7 +9,7 @@ export default function VideoSection() {
           <div className={s.overlay} data-cursor-video></div>
           <video
             className={s.video}
-            src="https://res.cloudinary.com/dkgnaegp9/video/upload/v1722811184/output2_svh41r.webm"
+            src="/video/output2.webm"
             autoPlay
             loop
             muted
