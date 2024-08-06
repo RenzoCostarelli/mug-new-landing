@@ -169,7 +169,7 @@ export default function SnapScroller() {
             <div className={`${s.desktop_photos}`}>
               <div className={`${s.box} ${s.red} desktop_photo`} ref={boxRef}>
                 <Image
-                  src="/images/1.jpg"
+                  src="/images/1blur.jpg"
                   alt="Mug team"
                   fill
                   sizes="1200px"
@@ -192,7 +192,7 @@ export default function SnapScroller() {
               </div>
               <div className={`${s.box} ${s.red} desktop_photo`} ref={boxRef}>
                 <Image
-                  src="/images/2.jpg"
+                  src="/images/2blur.jpg"
                   alt="Mug team"
                   fill
                   sizes="1200px"
@@ -215,7 +215,7 @@ export default function SnapScroller() {
               </div>
               <div className={`${s.box} ${s.green} desktop_photo`} ref={boxRef}>
                 <Image
-                  src="/images/3.jpg"
+                  src="/images/3blur.jpg"
                   alt="Mug team"
                   fill
                   sizes="1200px"
@@ -238,7 +238,7 @@ export default function SnapScroller() {
               </div>
               <div className={`${s.box} ${s.pink} desktop_photo`} ref={boxRef}>
                 <Image
-                  src="/images/4.jpg"
+                  src="/images/4blur.jpg"
                   alt="Mug team"
                   fill
                   sizes="1200px"
