@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "MUG",
-  description: "MUG rosario",
+  description:
+    "Somos una Asociación Civil que reúne a trabajadores de la cultura para fomentar su actividad y contribuir de forma activa en la profesionalización de sus proyectos.",
 };
 
 export default function RootLayout({
